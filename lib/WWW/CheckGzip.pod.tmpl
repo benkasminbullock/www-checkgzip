@@ -21,7 +21,7 @@ WWW::CheckGzip - abstract here.
 
 =head1 SYNOPSIS
 
-    use WWW::CheckGzip;
+[% example("synopsis") %]
 
 =head1 VERSION
 
@@ -35,9 +35,17 @@ Check a web page for gzip compression.
 
 =head1 METHODS
 
-=head1 new
+=head2 new
 
-=head1 check
+    my $wc = WWW::CheckGzip->new (\& test_sub);
+
+Create a new object.
+
+=head2 check
+
+    $wc->check ('http://www.hooli.xyz');
+
+Check the URL.
 
 =head1 DEPENDENCIES
 
