@@ -1,7 +1,7 @@
 package WWW::CheckGzip;
 use warnings;
 use strict;
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 use Carp;
 use Gzip::Faster;
 use LWP::UserAgent;
