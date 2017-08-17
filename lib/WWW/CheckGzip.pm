@@ -1,7 +1,7 @@
 package WWW::CheckGzip;
 use warnings;
 use strict;
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 use Carp;
 use Gzip::Faster;
 use LWP::UserAgent;
@@ -50,6 +50,11 @@ sub get_uncompressed
 sub check
 {
     my ($o, $url) = @_;
+
+    if (! $url) {
+	carp "No URL supplied";
+	return;
+    }
 
     # Test with compressed.
 
