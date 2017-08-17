@@ -13,6 +13,9 @@ WriteMakefile (
     AUTHOR => 'Ben Bullock <bkb@cpan.org>',
     LICENSE => 'perl',
     PREREQ_PM => {
+	'Carp' => '0',
+	'LWP::UserAgent' => '6.26',
+	'Gzip::Faster' => '0.20',
     },
     META_MERGE => {
 	'meta-spec' => {
