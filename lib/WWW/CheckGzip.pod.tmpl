@@ -150,11 +150,9 @@ gzip-related problems from a web page.
 
 =over
 
-=item L<WWW::Mechanize::Gzip>
+=item L<WWW::Mechanize::GZip>
 
-This is a somewhat awkward-to-use module which retrieves gzip
-content. Please note that all of the facilities this offers are
-already supplied by L<HTTP::Response/decoded_content>.
+This module retrieves gzip content from web pages.
 
 =back
 
@@ -164,7 +162,7 @@ already supplied by L<HTTP::Response/decoded_content>.
 
 =item L<http://www.computerhandlung.de/www-mechanize-gzip.htm>
 
-By the author of L<WWW::Mechanize::Gzip>.
+By the author of L<WWW::Mechanize::GZip>.
 
 =item L<http://www.whatsmyip.org/http-compression-test/>
 
@@ -192,11 +190,11 @@ correctly.
 On 6 March 2017, I suggested the module on PrePAN:
 L<http://prepan.org/module/nYdTCdrkEGF>. Unfortunately it didn't get
 any responses. Initially I was planning to fork
-L</WWW::Mechanize::Gzip>, and the old commits in the github repository
+L</WWW::Mechanize::GZip>, and the old commits in the github repository
 contain some code from that module.
 
 On 16 August 2017 I completely rewrote the module to remove the
-L</WWW::Mechanize::Gzip> parts and released version 0.01 to CPAN. The
+L</WWW::Mechanize::GZip> parts and released version 0.01 to CPAN. The
 methodology the module currently uses is based on my web page:
 L<https://www.lemoda.net/compression/lwp-use-gzip/index.html>.
 
