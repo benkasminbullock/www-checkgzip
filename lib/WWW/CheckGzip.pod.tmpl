@@ -111,13 +111,12 @@ module's tests with a real web site, set the environment variable
 WEBSITE to a real website you know to be well-behaved with regards to
 gzip compression. For example, on a Unix-like system,
 
-    export WEBSITE=http://www.hooli.xyz
-    make test
-    # clean up if necessary as follows
-    export WEBSITE=
+[% INCLUDE "test.sh" | xtidy %]
 
 will cause the module to attempt to connect to the given web site and
-check its compression. The tests will fail if the web site does not
+check its compression.
+
+The tests will fail if the web site does not
 use gzip correctly, so using your local web server may cause test
 failures which are not this module's fault.
 
@@ -212,7 +211,7 @@ contain some code from that module.
 
 On 16 August 2017 I completely rewrote the module to remove the
 L</WWW::Mechanize::GZip> parts and released version 0.01 to CPAN. The
-methodology the module currently uses is based on my web page:
+methodology the module used was based on my web page
 L<https://www.lemoda.net/compression/lwp-use-gzip/index.html>.
 
 On 1 October 2017, for version 0.04, I changed from L<LWP::UserAgent>

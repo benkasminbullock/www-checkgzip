@@ -59,6 +59,12 @@ for my $example (@examples) {
 	do_system ("perl -I$Bin/blib/lib -I$Bin/blib/arch $example > $output 2>&1", $verbose);
     }
 }
+# Output is not interesting
+# my $testsh = <$Bin/examples/test.sh>;
+# my $testshout = "$testsh.out";
+# if (older ($testshout, $testsh) || $force) {
+#     do_system ("$testsh > $testshout 2>&1", $verbose);
+# }
 
 chmod 0644, $output;
 $tt->process ($input, \%vars, $output, binmode => 'utf8')
@@ -69,7 +75,7 @@ exit;
 
 sub usage
 {
-print <<USAGEEOF;
+    print <<USAGEEOF;
 --verbose
 --force
 USAGEEOF
