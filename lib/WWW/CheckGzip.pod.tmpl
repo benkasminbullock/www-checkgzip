@@ -103,6 +103,25 @@ Check the URL given as the argument. The tests call the callback
 supplied to L</new>. There is no return value. If no URL is supplied,
 a warning is printed and the function returns.
 
+=head1 TESTING
+
+In order to not cause problems for testers, this module does not
+attempt to connect to the internet during its tests. To run the
+module's tests with a real web site, set the environment variable
+WEBSITE to a real website you know to be well-behaved with regards to
+gzip compression. For example, on a Unix-like system,
+
+    export WEBSITE=http://www.hooli.xyz
+    make test
+    # clean up if necessary as follows
+    export WEBSITE=
+
+will cause the module to attempt to connect to the given web site and
+check its compression. The tests will fail if the web site does not
+use gzip correctly, so using your local web server may cause test
+failures which are not this module's fault.
+
+
 =head1 DEPENDENCIES
 
 =over
@@ -115,12 +134,10 @@ This is used to report user errors.
 
 This is used to test whether the page content is in the gzip format or not.
 
-=item L<LWP::UserAgent>
+=item L<HTTP::Tiny>
 
-This is used to retrieve the web page. However, this module
-deliberately does not use the built in methods of libwww-perl such as
-L<HTTP::Response/decoded_content>, but explicitly does its own testing
-of the headers and the content returned.
+This is used to retrieve the web page. Until version 0.04,
+L<LWP::UserAgent> was used.
 
 =back
 
@@ -197,5 +214,9 @@ On 16 August 2017 I completely rewrote the module to remove the
 L</WWW::Mechanize::GZip> parts and released version 0.01 to CPAN. The
 methodology the module currently uses is based on my web page:
 L<https://www.lemoda.net/compression/lwp-use-gzip/index.html>.
+
+On 1 October 2017, for version 0.04, I changed from L<LWP::UserAgent>
+to L<HTTP::Tiny> at the L<suggestion of a blog
+commentator|http://blogs.perl.org/users/ben_bullock/2017/08/check-compression-in-web-page.html#comment-1790471>.
 
 [% INCLUDE "author" %]
