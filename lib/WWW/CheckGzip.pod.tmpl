@@ -157,6 +157,9 @@ on the command line:
 
     checkgzip http://www.lemoda.net/
 
+"No output" indicates success, so that this can be used by, for
+example cron jobs.
+
 =head1 SEE ALSO
 
 =head2 CPAN Modules
@@ -169,6 +172,32 @@ gzip-related problems from a web page.
 =item L<WWW::Mechanize::GZip>
 
 This module retrieves gzip content from web pages.
+
+=back
+
+=head2 About compression on the web
+
+=over
+
+=item L<web-gzip|https://github.com/benkasminbullock/web-gzip>
+
+Some scripts by the author of this module related to compression of
+static content (content which does not change with each request, such
+as JavaScript files).
+
+=item L<Compressing CGI output with Perl and Gzip::Faster|https://www.lemoda.net/cgi/perl-gzip-faster-cgi/index.html>
+
+A very simple demonstration of compression using CGI (the common
+gateway interface) and L<Gzip::Faster>.
+
+=item L<Gzip handler in Go|https://www.lemoda.net/go/gzip-handler/index.html>
+
+Similar to the above, but for the Go language.
+
+=item L<Compressing CGI output with Perl|https://www.lemoda.net/cgi/perl-gzip-cgi/index.html>
+
+Another Perl example, this time using the L<IO::Compress::Gzip> module
+instead of L<Gzip::Faster>.
 
 =back
 
